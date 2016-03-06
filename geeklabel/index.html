@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geek Label</title>
+<link rel='stylesheet' href='css/bootstrap.min.css'/>
+<link rel='stylesheet' href='css/main.css'/>
+<link rel="icon" href="images/logos/favicon.png" sizes="16x16">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">    
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>   
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>    
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->   
+<script src="js/respond.min.js"></script>   
+<script src="js/smoothscroll.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter=new google.maps.LatLng(51.5244058,-0.0745732);
+
+function initialize()
+{
+var stylesArray=[
+    {
+        "featureType": "landscape",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 65
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 51
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 30
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 40
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.province",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": -25
+            },
+            {
+                "saturation": -100
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "hue": "#ffff00"
+            },
+            {
+                "lightness": -25
+            },
+            {
+                "saturation": -97
+            }
+        ]
+    }
+]    
+var mapProp = {
+  center:myCenter,
+  zoom:15,
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+  styles:stylesArray,     
+  zoomControl:false,
+   scaleControl: true,
+  streetViewControl: false,   
+  mapTypeControl: false,    
+  };
+    
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var infowindow = new google.maps.InfoWindow({
+  content:"Geek Label<br>4th Floor<br>27 - 33 Bethnal Green Road<br>ShoreditchLondon<br>E1 6LA"
+  });
+
+  
+var marker=new google.maps.Marker({
+  position:myCenter,
+  icon:'images/components/mapmarker.png'
+  });
+
+  infowindow.open(map,marker);
+ 
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>   
+</head>
+<body>
+        <div class="container-fluid">
+            <!-- Intro Section-->
+              <section class="home_section">
+                  
+                <img src="images/logos/geeklogo.png" class="img-responsive geek_label_logo" alt='geeklabel'>
+                <p class="intro">A team of self confessed geeks who are all about great digital design</p>
+                  <a href='#design_sec' class='scroll'><img src="images/components/button.png" class="img-responsive down_button" alt='Scroll down'></a>  
+              </section>
+            <!-- Intro Section-->
+             <!-- Design Section -->
+              <section id='design_sec' class='design_section'>
+                  
+                   <img src="images/components/Section1man.png" class="img-responsive illustration" alt='deign'>
+                  <p class="content">Some agencies love <span class="highlight">design</span>, but don&#39;t know how to build</p>
+                  <a href='#build_sec' class='scroll'><img src="images/components/buttonred.png" class="img-responsive down_button down_button_red" alt='Scroll down'></a>  
+                  
+              </section> 
+               <!-- Design Section -->
+            
+              <!--Build Section -->
+             <section id='build_sec' class='design_section'>
+                 
+                   <img src="images/components/Section2man.png" class="img-responsive illustration" alt='build'>
+                  <p class="content">Some agencies know how to <span class="highlight">build</span>, but can&#39;t do design</p>
+                 <a href='#both_sec' class='scroll'><img src="images/components/buttonred.png" class="img-responsive down_button down_button_red" alt='Scroll down'></a> 
+                 
+              </section>    
+            <!-- Build Section-->
+            
+            <!--Both Section-->
+             <section id='both_sec' class='design_section both_sec'>
+                 
+                   <img src="images/components/Section3man.png" class="img-responsive illustration" alt='both'>
+                  <p class="content">We love <span class="highlight">both</span></p>
+                 <a href='#services' class='scroll'><img src="images/components/buttonred.png" class="img-responsive down_button down_button_red" alt='Scroll down'></a>  
+                 
+              </section> 
+            <!--Both Section-->
+            <!--Services Section-->
+            <section id='services' class="service_section">
+                
+                <div class="row">
+                    <h1 class='heading'>Services</h1>
+                    <div class="col-lg-2 col-md-2 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-12">
+                    <img src='images/service_circles/development.png' class="img-responsive" alt='web development'>
+                    <h3>Web Development</h3>    
+                    </div>
+                       <div class="col-lg-2 col-md-2  col-md-offset-0 col-sm-10 col-sm-offset-2 col-xs-12">
+                    <img src='images/service_circles/design.png' class="img-responsive" alt='design'>
+                    <h3>Design</h3>       
+                    </div>
+                       <div class="col-lg-2 col-md-2  col-md-offset-0 col-sm-10 col-sm-offset-2 col-xs-12">
+                    <img src='images/service_circles/branding.png' class="img-responsive" alt='branding'>
+                    <h3>Branding</h3>        
+                    </div>
+                       <div class="col-lg-2 col-md-2 col-md-offset-0 col-sm-10 col-sm-offset-2 col-xs-12">
+                    <img src='images/service_circles/uxresearh.png' class="img-responsive" alt='uxresearch'>
+                    <h3>UX Research</h3>       
+                    </div>
+                       
+                </div>
+                <a href='#clients' class='scroll'><img src="images/components/buttonblack.png" class="img-responsive down_button down_button_red down_button_black" alt='Scroll down'></a> 
+                
+            </section>
+            <!-- Service Section -->
+            <!-- Client Section -->
+            <section id='clients' class="client_section">
+                
+                <div class="row">
+                  <h1 class="heading">Clients</h1> 
+                    <div class="col-md-1 col-md-offset-1 col-xs-2">
+                    <img src='images/components/leftarrow.png' class='arrows img-responsive' alt='Previous'/>
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-2 client_image">
+                                <img src="images/clients/photographer_gallery.png" class="img-responsive" alt='pg'> 
+                            </div>
+                            <div class="col-md-3 client_image">
+                                <img src="images/clients/vegan.png" class="img-responsive" alt='vegan'> 
+                            </div>
+                            <div class="col-md-3 client_image">
+                                <img src="images/clients/pshe.png" class="img-responsive" alt='pshe'> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-xs-2">
+                    <img src='images/components/leftarrow.png' class='arrows img-responsive next' alt='Next'/>
+                    </div>
+                </div>
+                     <a href='#map' class='scroll'><img src="images/components/buttonblack.png" class="img-responsive down_button down_button_red down_button_black" alt='Scroll down'></a>
+                
+            </section>
+            <!-- Client Section -->
+            <!-- Map -->
+            <section id='map' class='map_section'>
+                
+                <div class="row">
+                <div class="col-xs-12 top"> 
+                <h1 class="heading">How to find us</h1>
+                </div>
+                <div class="col-xs-12" id='googleMap'>
+                
+                </div>
+                 <div class="col-xs-12 bottom"> 
+                 <a href='#contact' class='scroll'><img src="images/components/buttonred.png" class="img-responsive down_button down_button_red down_button_black" alt='Scroll down'></a> 
+                </div>
+                </div>   
+                
+            </section>
+            <!-- Map -->
+            <!-- Contact -->
+            <section id='contact' class='contact_section'>
+                
+                <h1 class="heading">Contact</h1>   
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3  col-xs-12">
+                        <form id="contact_form" name="contact-form" action="#">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" class="form-control" rows="5" placeholder="Message" id='message' required></textarea>
+                                </div>
+                                <button type="submit" class="col-xs-12 btn">Send Message!</button>
+                            </form>
+                    </div>
+                    <div class="col-md-12">
+                    <h5 ><span class="glyphicon glyphicon-earphone"></span>01923&nbsp; 220121</h5>
+                    <img src="images/components/envelope.png" alt='' class='envelope'/><h5 class='mail'>info@compucorp.co.uk</h5></div>
+                </div>
+                
+            </section>
+            
+            <!-- Contact -->
+            
+        </div>
+</body>
+</html>
