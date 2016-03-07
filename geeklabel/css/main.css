@@ -205,6 +205,15 @@ span {
     margin-top: -40px;
   }
 }
+@media (min-width: 375px)
+{
+    #services .heading{
+    margin-top: 100px;
+    }
+    #contact{
+    padding-bottom:80px;
+    }
+}
 @media (min-width: 480px) {
   section {
     padding: 300px 85px 35px 85px;
@@ -244,6 +253,9 @@ span {
     font-size: 1.49em;
     margin-top: 40px;
   }
+  #services .heading{
+    margin-top: 50px;
+    }
   #services .row img {
     width: 35%;
     margin-right: 20px;
