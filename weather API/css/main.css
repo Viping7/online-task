@@ -5,7 +5,7 @@ src:url('5thgradecursive-2.ttf');
 .container-fluid,body,header{
 padding:0;
 overflow-x: hidden;  
-font-family:Quicksand;    
+font-family:verdana;    
 text-align: center;     
 }
 header{
